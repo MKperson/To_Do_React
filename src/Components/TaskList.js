@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TaskList extends Compoent{
+class TaskList extends Component{
 
 
 }

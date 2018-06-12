@@ -7,11 +7,19 @@ import TaskList from './TaskList';
 
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state;
-    this.toggleTaskStatus= this.toggleTaskStatus.bind(this);
-    this.deleteTask= this.deleteTask.bind(this);
+    this.state = JSON.parse(localStorage.getItem('TASKS'));
+    if (!this.state) {
+      this.state = [
+        { task: 'Go to Dentist', isComplete: false },
+        { task: 'Do Gardening', isComplete: true },
+        { task: 'Renew Library Account', isComplete: false },
+      ];
+    }
+
+    this.toggleTaskStatus = this.toggleTaskStatus.bind(this);
+    this.deleteTask = this.deleteTask.bind(this);
     this.addTask = this.addTask.bind(this);
 
 
@@ -31,20 +39,20 @@ class App extends Component {
     console.log("ToggleTask")
     // this.tasks[index].isComplete = !this.tasks[index].isComplete;
     // this.loadTasks();
-}
+  }
 
-deleteTask(event, taskIndex) {
-  Console.Log("DELTASK")
+  deleteTask(event, taskIndex) {
+    console.Log("DELTASK")
     // event.preventDefault();
     // this.tasks.splice(taskIndex, 1);
     // this.loadTasks();
-}
+  }
 
 
 
 
-addTask(task) {
-  console.log("AddTask")
+  addTask(task) {
+    console.log("AddTask")
     // let newTask = {
     //   task,
     //   isComplete: false,
@@ -57,7 +65,7 @@ addTask(task) {
     //   this.tasks.push(newTask);
     //   this.loadTasks();
     // }
-}
+  }
 
 
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TaskForm extends Compoent{
+class TaskForm extends Component {
 
 }
 

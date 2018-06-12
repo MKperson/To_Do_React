@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Task extends Compoent{
+class Task extends Component {
 
 }
 

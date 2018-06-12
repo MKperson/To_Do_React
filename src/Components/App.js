@@ -9,9 +9,14 @@ import TaskList from './TaskList';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = JSON.parse(localStorage.getItem('TASKS'));
-    if (!this.state) {
-      this.state = [
+    this.state= {
+      task: "",
+      isComplete: false,
+
+    }
+    this.tasks = JSON.parse(localStorage.getItem('TASKS'));
+    if (!this.tasks) {
+      this.tasks = [
         { task: 'Go to Dentist', isComplete: false },
         { task: 'Do Gardening', isComplete: true },
         { task: 'Renew Library Account', isComplete: false },
@@ -22,18 +27,7 @@ class App extends Component {
     this.deleteTask = this.deleteTask.bind(this);
     this.addTask = this.addTask.bind(this);
 
-
-
-
-
   }
-
-
-
-
-
-
-
 
   toggleTaskStatus(index) {
     console.log("ToggleTask")
@@ -47,9 +41,6 @@ class App extends Component {
     // this.tasks.splice(taskIndex, 1);
     // this.loadTasks();
   }
-
-
-
 
   addTask(task) {
     console.log("AddTask")
@@ -70,14 +61,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div class="container">
+      <h1>TodoList</h1>
+      <Task task = {this.state}/>
       </div>
     );
   }
